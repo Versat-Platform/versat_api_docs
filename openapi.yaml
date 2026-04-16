@@ -1,0 +1,154 @@
+openapi: 3.0.3
+info:
+  title: Versat API
+  version: 1.0.0
+  description: |
+    La API de Versat ofrece acceso a datos vía REST sobre HTTPS.
+
+    Autenticación:
+    - Basic Auth (usuario y contraseña)
+    - Bearer Token (token ERP)
+
+    Importante: No compartir credenciales.
+
+servers:
+  - url: https://app.versat.ag/api/Polling/
+
+security:
+  - basicAuth: []
+  - bearerAuth: []
+
+paths:
+  /Data:
+    get:
+      summary: Listar Cotizaciones de Monedas
+      description: |
+        Permite listar cotizaciones o filtrar registros por campos específicos.
+      parameters:
+        - name: recurso
+          in: query
+          required: true
+          schema:
+            type: string
+            example: AF01
+
+        - name: empresa_id
+          in: query
+          required: false
+          schema:
+            type: integer
+          description: ID de la empresa. No requerido si se usa Bearer Token.
+
+        - name: filtro_campo
+          in: query
+          required: false
+          schema:
+            type: string
+
+        - name: filtro_valor
+          in: query
+          required: false
+          schema:
+            type: string
+
+        - name: pagina
+          in: query
+          required: false
+          schema:
+            type: integer
+          description: |
+            Página a mostrar. Usar 0 para traer últimos 100 sin paginar.
+
+        - name: registros_por_pagina
+          in: query
+          required: false
+          schema:
+            type: integer
+            maximum: 1000
+            default: 100
+
+      responses:
+        "200":
+          description: Respuesta exitosa
+          content:
+            application/json:
+              schema:
+                oneOf:
+                  - type: array
+                    items:
+                      $ref: "#/components/schemas/Cotizacion"
+                  - $ref: "#/components/schemas/Paginado"
+              examples:
+                sin_paginacion:
+                  value:
+                    - id: 123
+                      Fecha: "2026-04-16"
+                      Cotizacion_tipo_id: 123
+                      Compra: 123.45
+                      Venta: 123.45
+                      Cotizacion_tipo_txt: "ABCD"
+                      Empresa_txt: "ABCD"
+
+                con_paginacion:
+                  value:
+                    TotalItems: 962743
+                    ItemsPerPage: 100
+                    ActualPage: 1
+                    TotalPages: 9628
+                    Items:
+                      - id: 123
+                        Fecha: "2026-04-16"
+                        Cotizacion_tipo_id: 123
+                        Compra: 123.45
+                        Venta: 123.45
+                        Cotizacion_tipo_txt: "ABCD"
+                        Empresa_txt: "ABCD"
+
+components:
+  securitySchemes:
+    basicAuth:
+      type: http
+      scheme: basic
+
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+
+  schemas:
+    Cotizacion:
+      type: object
+      properties:
+        id:
+          type: integer
+        Fecha:
+          type: string
+          format: date
+        Cotizacion_tipo_id:
+          type: integer
+        Compra:
+          type: number
+          format: float
+        Venta:
+          type: number
+          format: float
+        Cotizacion_tipo_txt:
+          type: string
+        Empresa_txt:
+          type: string
+
+    Paginado:
+      type: object
+      properties:
+        TotalItems:
+          type: integer
+        ItemsPerPage:
+          type: integer
+        ActualPage:
+          type: integer
+        TotalPages:
+          type: integer
+        Items:
+          type: array
+          items:
+            $ref: "#/components/schemas/Cotizacion"
