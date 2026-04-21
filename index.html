@@ -13,15 +13,12 @@
   <div id="swagger-ui"></div>
 
   <script src="https://unpkg.com/swagger-ui-dist/swagger-ui-bundle.js"></script>
+
   <script>
-    fetch("openapi.yaml")
-      .then(r => r.text())
-      .then(text => {
-        SwaggerUIBundle({
-          spec: jsyaml.load(text),
-          dom_id: "#swagger-ui"
-        });
-      });
+    SwaggerUIBundle({
+      url: "openapi.yaml",
+      dom_id: "#swagger-ui"
+    });
   </script>
 
 </body>
