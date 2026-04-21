@@ -221,7 +221,7 @@ tags:
   - name: Analytics
 
 paths:
-  /AF01:
+  /Data?recurso=AF01:
     get:
       tags:
         - AF01 - Cotizaciones de Monedas
@@ -403,7 +403,7 @@ paths:
         "200":
           description: "0123456789"
 
-  /AF31:
+  /Data?recurso=AF31:
     get:
       tags:
         - AF31 - Facturas
@@ -1315,7 +1315,7 @@ paths:
         "200":
           description: "0123456789"
 
-  /AF41:
+  /Data?recurso=AF41:
     get:
       tags:
         - AF41 - Órdenes de Pago
@@ -1622,7 +1622,7 @@ paths:
         "200":
           description: "0123456789"
 
-  /AF51:
+  /Data?recurso=AF51:
     get:
       tags:
         - AF51 - Recibos y Transacciones
@@ -2295,7 +2295,7 @@ paths:
         "200":
           description: "0123456789"
 
-  /AF61:
+  /Data?recurso=AF61:
     get:
       tags:
         - AF61 - Pagarés
@@ -2421,8 +2421,7 @@ paths:
                     ActualPage: 1
                     TotalPages: 9628
                     Items:
-                      - Status: "ABCD"
-                        saldo_pagare_hd: 123.45
+                      - saldo_pagare_hd: 123.45
                         id: 123
                         Fecha: "2026-04-21"
                         Vencimiento: "2026-04-21"
@@ -2434,6 +2433,7 @@ paths:
                         Pagare_num_cb_uk: "ABCD" # Número del Pagaré
                         Valor: 123.45 # Valor del Pagaré
                         Firma_ro: "ABCD" # Situación
+                        Status: "ABCD"
                         Negociable_sn: "ABCD" # Negociable
                         Imprime_fact_sn: "ABCD" # Imprimir facturas de referencia
                         Zafra_txt: "ABCD"
@@ -2534,8 +2534,7 @@ paths:
               cabecera:
                 summary: Clase cabecera Pagare_fin
                 value:
-                  - Status: "ABCD"
-                    saldo_pagare_hd: 123.45
+                  - saldo_pagare_hd: 123.45
                     Fecha: "2026-04-21"
                     Vencimiento: "2026-04-21"
                     Emision_doc: "ABCD" # Emitido por
@@ -2545,6 +2544,7 @@ paths:
                     Entidad_id: 123 # Entidad
                     Pagare_num_cb_uk: "ABCD" # Número del Pagaré
                     Valor: 123.45 # Valor del Pagaré
+                    Status: "ABCD"
                     Negociable_sn: "ABCD" # Negociable
                     Imprime_fact_sn: "ABCD" # Imprimir facturas de referencia
               detalle_Pagare_entidad:
@@ -2611,8 +2611,7 @@ paths:
               cabecera:
                 summary: Clase cabecera Pagare_fin
                 value:
-                  - Status: "ABCD"
-                    saldo_pagare_hd: 123.45
+                  - saldo_pagare_hd: 123.45
                     Fecha: "2026-04-21"
                     Vencimiento: "2026-04-21"
                     Emision_doc: "ABCD" # Emitido por
@@ -2622,6 +2621,7 @@ paths:
                     Entidad_id: 123 # Entidad
                     Pagare_num_cb_uk: "ABCD" # Número del Pagaré
                     Valor: 123.45 # Valor del Pagaré
+                    Status: "ABCD"
                     Negociable_sn: "ABCD" # Negociable
                     Imprime_fact_sn: "ABCD" # Imprimir facturas de referencia
               detalle_Pagare_entidad:
@@ -2639,7 +2639,7 @@ paths:
         "200":
           description: "0123456789"
 
-  /AF71:
+  /Data?recurso=AF71:
     get:
       tags:
         - AF71 - Cheques
@@ -2882,7 +2882,7 @@ paths:
         "200":
           description: "0123456789"
 
-  /AF81:
+  /Data?recurso=AF81:
     get:
       tags:
         - AF81 - Conciliación Bancaria
@@ -3241,7 +3241,7 @@ paths:
         "200":
           description: "0123456789"
 
-  /AF86:
+  /Data?recurso=AF86:
     get:
       tags:
         - AF86 - Presupuesto Anual
@@ -3532,7 +3532,7 @@ paths:
         "200":
           description: "0123456789"
 
-  /AG01:
+  /Data?recurso=AG01:
     get:
       tags:
         - AG01 - Cotizaciones del Mercado
@@ -3722,7 +3722,7 @@ paths:
         "200":
           description: "0123456789"
 
-  /AG10:
+  /Data?recurso=AG10:
     get:
       tags:
         - AG10 - Contratos de Representación
@@ -4089,7 +4089,7 @@ paths:
         "200":
           description: "0123456789"
 
-  /AG11:
+  /Data?recurso=AG11:
     get:
       tags:
         - AG11 - Contratos de Compra/Venta
@@ -4572,7 +4572,7 @@ paths:
         "200":
           description: "0123456789"
 
-  /AG12:
+  /Data?recurso=AG12:
     get:
       tags:
         - AG12 - Cancelación de Contratos
@@ -4805,7 +4805,7 @@ paths:
         "200":
           description: "0123456789"
 
-  /AG17:
+  /Data?recurso=AG17:
     get:
       tags:
         - AG17 - Orden de Fijación
@@ -5080,7 +5080,7 @@ paths:
         "200":
           description: "0123456789"
 
-  /AG21:
+  /Data?recurso=AG21:
     get:
       tags:
         - AG21 - Fijación de Costos
@@ -5391,7 +5391,7 @@ paths:
         "200":
           description: "0123456789"
 
-  /AG25:
+  /Data?recurso=AG25:
     get:
       tags:
         - AG25 - Rollover
@@ -5692,7 +5692,7 @@ paths:
         "200":
           description: "0123456789"
 
-  /AG31:
+  /Data?recurso=AG31:
     get:
       tags:
         - AG31 - Fijación de Bushel
@@ -6015,7 +6015,7 @@ paths:
         "200":
           description: "0123456789"
 
-  /AG41:
+  /Data?recurso=AG41:
     get:
       tags:
         - AG41 - Fijación de Precio
@@ -6322,7 +6322,7 @@ paths:
         "200":
           description: "0123456789"
 
-  /AG51:
+  /Data?recurso=AG51:
     get:
       tags:
         - AG51 - Transferencias entre Clientes
@@ -6658,7 +6658,7 @@ paths:
         "200":
           description: "0123456789"
 
-  /AG61:
+  /Data?recurso=AG61:
     get:
       tags:
         - AG61 - Contrataciones de Fletes
@@ -6934,7 +6934,7 @@ paths:
         "200":
           description: "0123456789"
 
-  /AG62:
+  /Data?recurso=AG62:
     get:
       tags:
         - AG62 - Provisión de Pago de Flete
@@ -7277,7 +7277,7 @@ paths:
         "200":
           description: "0123456789"
 
-  /AG71:
+  /Data?recurso=AG71:
     get:
       tags:
         - AG71 - Remisiones
@@ -7849,7 +7849,7 @@ paths:
         "200":
           description: "0123456789"
 
-  /AG72:
+  /Data?recurso=AG72:
     get:
       tags:
         - AG72 - Pesos de Llegada
@@ -8226,7 +8226,7 @@ paths:
         "200":
           description: "0123456789"
 
-  /AG91:
+  /Data?recurso=AG91:
     get:
       tags:
         - AG91 - Facturas
@@ -9300,7 +9300,7 @@ paths:
         "200":
           description: "0123456789"
 
-  /AI11:
+  /Data?recurso=AI11:
     get:
       tags:
         - AI11 - Pedidos
@@ -9727,7 +9727,7 @@ paths:
         "200":
           description: "0123456789"
 
-  /AI15:
+  /Data?recurso=AI15:
     get:
       tags:
         - AI15 - Cancelación de Pedidos
@@ -9972,7 +9972,7 @@ paths:
         "200":
           description: "0123456789"
 
-  /AI51:
+  /Data?recurso=AI51:
     get:
       tags:
         - AI51 - Remisiones
@@ -10403,7 +10403,7 @@ paths:
         "200":
           description: "0123456789"
 
-  /AI71:
+  /Data?recurso=AI71:
     get:
       tags:
         - AI71 - Facturas
@@ -11456,7 +11456,7 @@ paths:
         "200":
           description: "0123456789"
 
-  /AI81:
+  /Data?recurso=AI81:
     get:
       tags:
         - AI81 - Pagarés
@@ -11537,8 +11537,7 @@ paths:
                 cabecera:
                   summary: Clase cabecera Pagare_ins
                   value:
-                    - Status: "ABCD"
-                      saldo_pagare_hd: 123.45
+                    - saldo_pagare_hd: 123.45
                       id: 123
                       Fecha: "2026-04-21"
                       Vencimiento: "2026-04-21"
@@ -11550,6 +11549,7 @@ paths:
                       Pagare_num_cb_uk: "ABCD" # Número del Pagaré
                       Valor: 123.45 # Valor del Pagaré
                       Firma_ro: "ABCD" # Situación
+                      Status: "ABCD"
                       Negociable_sn: "ABCD" # Negociable
                       Imprime_fact_sn: "ABCD" # Imprimir facturas de referencia
                       Zafra_txt: "ABCD"
@@ -11582,8 +11582,7 @@ paths:
                     ActualPage: 1
                     TotalPages: 9628
                     Items:
-                      - Status: "ABCD"
-                        saldo_pagare_hd: 123.45
+                      - saldo_pagare_hd: 123.45
                         id: 123
                         Fecha: "2026-04-21"
                         Vencimiento: "2026-04-21"
@@ -11595,6 +11594,7 @@ paths:
                         Pagare_num_cb_uk: "ABCD" # Número del Pagaré
                         Valor: 123.45 # Valor del Pagaré
                         Firma_ro: "ABCD" # Situación
+                        Status: "ABCD"
                         Negociable_sn: "ABCD" # Negociable
                         Imprime_fact_sn: "ABCD" # Imprimir facturas de referencia
                         Zafra_txt: "ABCD"
@@ -11695,8 +11695,7 @@ paths:
               cabecera:
                 summary: Clase cabecera Pagare_ins
                 value:
-                  - Status: "ABCD"
-                    saldo_pagare_hd: 123.45
+                  - saldo_pagare_hd: 123.45
                     Fecha: "2026-04-21"
                     Vencimiento: "2026-04-21"
                     Emision_doc: "ABCD" # Emitido por
@@ -11706,6 +11705,7 @@ paths:
                     Entidad_id: 123 # Entidad
                     Pagare_num_cb_uk: "ABCD" # Número del Pagaré
                     Valor: 123.45 # Valor del Pagaré
+                    Status: "ABCD"
                     Negociable_sn: "ABCD" # Negociable
                     Imprime_fact_sn: "ABCD" # Imprimir facturas de referencia
               detalle_Pagare_entidad:
@@ -11772,8 +11772,7 @@ paths:
               cabecera:
                 summary: Clase cabecera Pagare_ins
                 value:
-                  - Status: "ABCD"
-                    saldo_pagare_hd: 123.45
+                  - saldo_pagare_hd: 123.45
                     Fecha: "2026-04-21"
                     Vencimiento: "2026-04-21"
                     Emision_doc: "ABCD" # Emitido por
@@ -11783,6 +11782,7 @@ paths:
                     Entidad_id: 123 # Entidad
                     Pagare_num_cb_uk: "ABCD" # Número del Pagaré
                     Valor: 123.45 # Valor del Pagaré
+                    Status: "ABCD"
                     Negociable_sn: "ABCD" # Negociable
                     Imprime_fact_sn: "ABCD" # Imprimir facturas de referencia
               detalle_Pagare_entidad:
@@ -11800,7 +11800,7 @@ paths:
         "200":
           description: "0123456789"
 
-  /AI91:
+  /Data?recurso=AI91:
     get:
       tags:
         - AI91 - Provisión de Pago de Comisiones
@@ -12098,7 +12098,7 @@ paths:
         "200":
           description: "0123456789"
 
-  /AM31:
+  /Data?recurso=AM31:
     get:
       tags:
         - AM31 - Planificación Comercial
@@ -12551,7 +12551,7 @@ paths:
         "200":
           description: "0123456789"
 
-  /AM61:
+  /Data?recurso=AM61:
     get:
       tags:
         - AM61 - Mediciones de Áreas
@@ -12743,7 +12743,7 @@ paths:
         "200":
           description: "0123456789"
 
-  /AM71:
+  /Data?recurso=AM71:
     get:
       tags:
         - AM71 - Historial de Checkin
@@ -12943,7 +12943,7 @@ paths:
         "200":
           description: "0123456789"
 
-  /AO01:
+  /Data?recurso=AO01:
     get:
       tags:
         - AO01 - Solicitudes de Crédito
@@ -13256,7 +13256,7 @@ paths:
         "200":
           description: "0123456789"
 
-  /AO40:
+  /Data?recurso=AO40:
     get:
       tags:
         - AO40 - Protocolos de Facturas
@@ -13543,12 +13543,12 @@ paths:
               cabecera:
                 summary: Clase cabecera Protocolo_factura
                 value:
-                  - descripcion_hd_cb: "ABCD"
+                  - Status: "ABCD"
+                    descripcion_hd_cb: "ABCD"
                     Fecha: "2026-04-21"
                     Unidad_id: 123 # Unidad
                     Portador_id: 123 # Portador
                     Obs: "ABCD"
-                    Status: "ABCD"
                     Emision_doc: "ABCD" # Emitido por
                     Firma: "ABCD" # Situación
               detalle_Protocolo_documento:
@@ -13565,7 +13565,7 @@ paths:
         "200":
           description: "0123456789"
 
-  /AO41:
+  /Data?recurso=AO41:
     get:
       tags:
         - AO41 - Protocolos de Pagarés
@@ -13882,7 +13882,7 @@ paths:
         "200":
           description: "0123456789"
 
-  /AO42:
+  /Data?recurso=AO42:
     get:
       tags:
         - AO42 - Protocolos de Contratos
@@ -13963,13 +13963,13 @@ paths:
                 cabecera:
                   summary: Clase cabecera Protocolo_contrato
                   value:
-                    - descripcion_hd_cb: "ABCD"
+                    - Status: "ABCD"
+                      descripcion_hd_cb: "ABCD"
                       id: 123
                       Fecha: "2026-04-21"
                       Unidad_id: 123 # Unidad
                       Portador_id: 123 # Portador
                       Obs: "ABCD"
-                      Status: "ABCD"
                       Emision_doc: "ABCD" # Emitido por
                       Firma: "ABCD" # Situación
                       Portador_txt: "ABCD"
@@ -13999,13 +13999,13 @@ paths:
                     ActualPage: 1
                     TotalPages: 9628
                     Items:
-                      - descripcion_hd_cb: "ABCD"
+                      - Status: "ABCD"
+                        descripcion_hd_cb: "ABCD"
                         id: 123
                         Fecha: "2026-04-21"
                         Unidad_id: 123 # Unidad
                         Portador_id: 123 # Portador
                         Obs: "ABCD"
-                        Status: "ABCD"
                         Emision_doc: "ABCD" # Emitido por
                         Firma: "ABCD" # Situación
                         Portador_txt: "ABCD"
@@ -14098,12 +14098,12 @@ paths:
               cabecera:
                 summary: Clase cabecera Protocolo_contrato
                 value:
-                  - descripcion_hd_cb: "ABCD"
+                  - Status: "ABCD"
+                    descripcion_hd_cb: "ABCD"
                     Fecha: "2026-04-21"
                     Unidad_id: 123 # Unidad
                     Portador_id: 123 # Portador
                     Obs: "ABCD"
-                    Status: "ABCD"
                     Emision_doc: "ABCD" # Emitido por
                     Firma: "ABCD" # Situación
               detalle_Protocolo_documento:
@@ -14169,12 +14169,12 @@ paths:
               cabecera:
                 summary: Clase cabecera Protocolo_contrato
                 value:
-                  - descripcion_hd_cb: "ABCD"
+                  - Status: "ABCD"
+                    descripcion_hd_cb: "ABCD"
                     Fecha: "2026-04-21"
                     Unidad_id: 123 # Unidad
                     Portador_id: 123 # Portador
                     Obs: "ABCD"
-                    Status: "ABCD"
                     Emision_doc: "ABCD" # Emitido por
                     Firma: "ABCD" # Situación
               detalle_Protocolo_documento:
@@ -14191,7 +14191,7 @@ paths:
         "200":
           description: "0123456789"
 
-  /AO43:
+  /Data?recurso=AO43:
     get:
       tags:
         - AO43 - Protocolos de Fijaciones
@@ -14499,12 +14499,12 @@ paths:
               cabecera:
                 summary: Clase cabecera Protocolo_fijacion
                 value:
-                  - Status: "ABCD"
-                    descripcion_hd_cb: "ABCD"
+                  - descripcion_hd_cb: "ABCD"
                     Fecha: "2026-04-21"
                     Unidad_id: 123 # Unidad
                     Portador_id: 123 # Portador
                     Obs: "ABCD"
+                    Status: "ABCD"
                     Emision_doc: "ABCD" # Emitido por
                     Firma: "ABCD" # Situación
               detalle_Protocolo_documento_bushel:
@@ -14594,12 +14594,12 @@ paths:
               cabecera:
                 summary: Clase cabecera Protocolo_fijacion
                 value:
-                  - Status: "ABCD"
-                    descripcion_hd_cb: "ABCD"
+                  - descripcion_hd_cb: "ABCD"
                     Fecha: "2026-04-21"
                     Unidad_id: 123 # Unidad
                     Portador_id: 123 # Portador
                     Obs: "ABCD"
+                    Status: "ABCD"
                     Emision_doc: "ABCD" # Emitido por
                     Firma: "ABCD" # Situación
               detalle_Protocolo_documento_bushel:
@@ -14639,7 +14639,7 @@ paths:
         "200":
           description: "0123456789"
 
-  /AO44:
+  /Data?recurso=AO44:
     get:
       tags:
         - AO44 - Protocolos de Cheques
@@ -14720,13 +14720,13 @@ paths:
                 cabecera:
                   summary: Clase cabecera Protocolo_cheque
                   value:
-                    - descripcion_hd_cb: "ABCD"
+                    - Status: "ABCD"
+                      descripcion_hd_cb: "ABCD"
                       id: 123
                       Fecha: "2026-04-21"
                       Unidad_id: 123 # Unidad
                       Portador_id: 123 # Portador
                       Obs: "ABCD"
-                      Status: "ABCD"
                       Emision_doc: "ABCD" # Emitido por
                       Firma: "ABCD" # Situación
                       Portador_txt: "ABCD"
@@ -14756,13 +14756,13 @@ paths:
                     ActualPage: 1
                     TotalPages: 9628
                     Items:
-                      - descripcion_hd_cb: "ABCD"
+                      - Status: "ABCD"
+                        descripcion_hd_cb: "ABCD"
                         id: 123
                         Fecha: "2026-04-21"
                         Unidad_id: 123 # Unidad
                         Portador_id: 123 # Portador
                         Obs: "ABCD"
-                        Status: "ABCD"
                         Emision_doc: "ABCD" # Emitido por
                         Firma: "ABCD" # Situación
                         Portador_txt: "ABCD"
@@ -14855,12 +14855,12 @@ paths:
               cabecera:
                 summary: Clase cabecera Protocolo_cheque
                 value:
-                  - descripcion_hd_cb: "ABCD"
+                  - Status: "ABCD"
+                    descripcion_hd_cb: "ABCD"
                     Fecha: "2026-04-21"
                     Unidad_id: 123 # Unidad
                     Portador_id: 123 # Portador
                     Obs: "ABCD"
-                    Status: "ABCD"
                     Emision_doc: "ABCD" # Emitido por
                     Firma: "ABCD" # Situación
               detalle_Protocolo_documento:
@@ -14926,12 +14926,12 @@ paths:
               cabecera:
                 summary: Clase cabecera Protocolo_cheque
                 value:
-                  - descripcion_hd_cb: "ABCD"
+                  - Status: "ABCD"
+                    descripcion_hd_cb: "ABCD"
                     Fecha: "2026-04-21"
                     Unidad_id: 123 # Unidad
                     Portador_id: 123 # Portador
                     Obs: "ABCD"
-                    Status: "ABCD"
                     Emision_doc: "ABCD" # Emitido por
                     Firma: "ABCD" # Situación
               detalle_Protocolo_documento:
@@ -14948,7 +14948,7 @@ paths:
         "200":
           description: "0123456789"
 
-  /AO81:
+  /Data?recurso=AO81:
     get:
       tags:
         - AO81 - Renegociación de Vencimientos
@@ -15256,7 +15256,7 @@ paths:
         "200":
           description: "0123456789"
 
-  /AP31:
+  /Data?recurso=AP31:
     get:
       tags:
         - AP31 - Consumo Interno
@@ -15694,7 +15694,7 @@ paths:
         "200":
           description: "0123456789"
 
-  /AP41:
+  /Data?recurso=AP41:
     get:
       tags:
         - AP41 - Orden de Producción
@@ -15991,7 +15991,7 @@ paths:
         "200":
           description: "0123456789"
 
-  /AP51:
+  /Data?recurso=AP51:
     get:
       tags:
         - AP51 - Entradas de Producción en Serie
@@ -16205,7 +16205,7 @@ paths:
         "200":
           description: "0123456789"
 
-  /AP61:
+  /Data?recurso=AP61:
     get:
       tags:
         - AP61 - Cierre de Orden de Producción
@@ -16520,7 +16520,7 @@ paths:
         "200":
           description: "0123456789"
 
-  /AP71:
+  /Data?recurso=AP71:
     get:
       tags:
         - AP71 - Cierre de Producción Agrícola
@@ -16788,7 +16788,7 @@ paths:
         "200":
           description: "0123456789"
 
-  /AP81:
+  /Data?recurso=AP81:
     get:
       tags:
         - AP81 - Transformación de Productos
@@ -17015,7 +17015,7 @@ paths:
         "200":
           description: "0123456789"
 
-  /AQ21:
+  /Data?recurso=AQ21:
     get:
       tags:
         - AQ21 - Proyectos de Zafra
@@ -17255,7 +17255,7 @@ paths:
         "200":
           description: "0123456789"
 
-  /AQ31:
+  /Data?recurso=AQ31:
     get:
       tags:
         - AQ31 - Recomendaciones de Aplicación
@@ -17581,7 +17581,7 @@ paths:
         "200":
           description: "0123456789"
 
-  /AQ71:
+  /Data?recurso=AQ71:
     get:
       tags:
         - AQ71 - Lluvia
@@ -17769,7 +17769,7 @@ paths:
         "200":
           description: "0123456789"
 
-  /AR05:
+  /Data?recurso=AR05:
     get:
       tags:
         - AR05 - Contratos de Trabajo
@@ -18013,7 +18013,7 @@ paths:
         "200":
           description: "0123456789"
 
-  /AR11:
+  /Data?recurso=AR11:
     get:
       tags:
         - AR11 - Hoja de Pago
@@ -18310,7 +18310,7 @@ paths:
         "200":
           description: "0123456789"
 
-  /AR51:
+  /Data?recurso=AR51:
     get:
       tags:
         - AR51 - Solicitud de vacaciones
@@ -18543,7 +18543,7 @@ paths:
         "200":
           description: "0123456789"
 
-  /AX01:
+  /Data?recurso=AX01:
     get:
       tags:
         - AX01 - Lanzamientos en el Diario
@@ -18908,7 +18908,7 @@ paths:
         "200":
           description: "0123456789"
 
-  /AX41:
+  /Data?recurso=AX41:
     get:
       tags:
         - AX41 - Aperturas de Despachos
@@ -19139,7 +19139,7 @@ paths:
         "200":
           description: "0123456789"
 
-  /AX45:
+  /Data?recurso=AX45:
     get:
       tags:
         - AX45 - Cierres de Despachos
@@ -19350,7 +19350,7 @@ paths:
         "200":
           description: "0123456789"
 
-  /AX51:
+  /Data?recurso=AX51:
     get:
       tags:
         - AX51 - Actualizaciones Monetarias
@@ -19619,7 +19619,7 @@ paths:
         "200":
           description: "0123456789"
 
-  /AX61:
+  /Data?recurso=AX61:
     get:
       tags:
         - AX61 - Revalúo y Depreciación
@@ -19828,7 +19828,7 @@ paths:
         "200":
           description: "0123456789"
 
-  /AX71:
+  /Data?recurso=AX71:
     get:
       tags:
         - AX71 - Cierre de Periodo (mensual o diario)
@@ -20033,7 +20033,7 @@ paths:
         "200":
           description: "0123456789"
 
-  /AX81:
+  /Data?recurso=AX81:
     get:
       tags:
         - AX81 - Cierre de Ejercicio
@@ -20238,7 +20238,7 @@ paths:
         "200":
           description: "0123456789"
 
-  /AX82:
+  /Data?recurso=AX82:
     get:
       tags:
         - AX82 - Apertura de Ejercicio
@@ -20455,7 +20455,7 @@ paths:
         "200":
           description: "0123456789"
 
-  /AX85:
+  /Data?recurso=AX85:
     get:
       tags:
         - AX85 - Auditoría
@@ -20635,7 +20635,7 @@ paths:
         "200":
           description: "0123456789"
 
-  /BA13:
+  /Data?recurso=BA13:
     get:
       tags:
         - BA13 - Chapas
@@ -20863,7 +20863,7 @@ paths:
         "200":
           description: "0123456789"
 
-  /BA15:
+  /Data?recurso=BA15:
     get:
       tags:
         - BA15 - Choferes y propietarios de vehículos
@@ -21049,7 +21049,7 @@ paths:
         "200":
           description: "0123456789"
 
-  /BA31:
+  /Data?recurso=BA31:
     get:
       tags:
         - BA31 - Entidades
@@ -22055,7 +22055,7 @@ paths:
         "200":
           description: "0123456789"
 
-  /BA32:
+  /Data?recurso=BA32:
     get:
       tags:
         - BA32 - Entidades - Inmuebles
@@ -22321,7 +22321,7 @@ paths:
         "200":
           description: "0123456789"
 
-  /BA33:
+  /Data?recurso=BA33:
     get:
       tags:
         - BA33 - Entidades - Otros bienes
@@ -22565,7 +22565,7 @@ paths:
         "200":
           description: "0123456789"
 
-  /BA37:
+  /Data?recurso=BA37:
     get:
       tags:
         - BA37 - Actividades
@@ -22865,7 +22865,7 @@ paths:
         "200":
           description: "0123456789"
 
-  /BA41:
+  /Data?recurso=BA41:
     get:
       tags:
         - BA41 - Restricciones de Entidades por Usuario
@@ -23099,7 +23099,7 @@ paths:
         "200":
           description: "0123456789"
 
-  /BA51:
+  /Data?recurso=BA51:
     get:
       tags:
         - BA51 - Registro Único de Contribuyentes
@@ -23274,7 +23274,7 @@ paths:
         "200":
           description: "0123456789"
 
-  /BB11:
+  /Data?recurso=BB11:
     get:
       tags:
         - BB11 - Inmuebles
@@ -23478,7 +23478,7 @@ paths:
         "200":
           description: "0123456789"
 
-  /BB21:
+  /Data?recurso=BB21:
     get:
       tags:
         - BB21 - Muebles y Equipos
@@ -23682,7 +23682,7 @@ paths:
         "200":
           description: "0123456789"
 
-  /BB31:
+  /Data?recurso=BB31:
     get:
       tags:
         - BB31 - Vehículos y Maquinaria
@@ -23898,7 +23898,7 @@ paths:
         "200":
           description: "0123456789"
 
-  /BP41:
+  /Data?recurso=BP41:
     get:
       tags:
         - BP41 - Materiales
@@ -24235,7 +24235,7 @@ paths:
         "200":
           description: "0123456789"
 
-  /BP51:
+  /Data?recurso=BP51:
     get:
       tags:
         - BP51 - Insumos Agrícolas
@@ -24813,7 +24813,7 @@ paths:
         "200":
           description: "0123456789"
 
-  /BP52:
+  /Data?recurso=BP52:
     get:
       tags:
         - BP52 - Granos
@@ -25219,7 +25219,7 @@ paths:
         "200":
           description: "0123456789"
 
-  /BP61:
+  /Data?recurso=BP61:
     get:
       tags:
         - BP61 - Servicios
@@ -25574,7 +25574,7 @@ paths:
         "200":
           description: "0123456789"
 
-  /BP64:
+  /Data?recurso=BP64:
     get:
       tags:
         - BP64 - Productos Elaborados
@@ -26059,7 +26059,7 @@ paths:
         "200":
           description: "0123456789"
 
-  /BP71:
+  /Data?recurso=BP71:
     get:
       tags:
         - BP71 - Lista de Precios
@@ -26261,7 +26261,7 @@ paths:
         "200":
           description: "0123456789"
 
-  /OA01:
+  /Data?recurso=OA01:
     get:
       tags:
         - OA01 - Mis Informes
@@ -26505,7 +26505,7 @@ paths:
         "200":
           description: "0123456789"
 
-  /OA03:
+  /Data?recurso=OA03:
     get:
       tags:
         - OA03 - Depósitos
@@ -26775,7 +26775,7 @@ paths:
         "200":
           description: "0123456789"
 
-  /OA11:
+  /Data?recurso=OA11:
     get:
       tags:
         - OA11 - Parcelas
@@ -26951,7 +26951,7 @@ paths:
         "200":
           description: "0123456789"
 
-  /OA21:
+  /Data?recurso=OA21:
     get:
       tags:
         - OA21 - Zafras
@@ -27266,7 +27266,7 @@ paths:
         "200":
           description: "0123456789"
 
-  /OA22:
+  /Data?recurso=OA22:
     get:
       tags:
         - OA22 - Culturas
@@ -27432,7 +27432,7 @@ paths:
         "200":
           description: "0123456789"
 
-  /OA28:
+  /Data?recurso=OA28:
     get:
       tags:
         - OA28 - Secuencial de Pedidos
@@ -27626,7 +27626,7 @@ paths:
         "200":
           description: "0123456789"
 
-  /OA29:
+  /Data?recurso=OA29:
     get:
       tags:
         - OA29 - Secuencial de Recibos de Cobro
@@ -27821,7 +27821,7 @@ paths:
         "200":
           description: "0123456789"
 
-  /OA30:
+  /Data?recurso=OA30:
     get:
       tags:
         - OA30 - Secuencial de Pagarés
@@ -28015,7 +28015,7 @@ paths:
         "200":
           description: "0123456789"
 
-  /OA31:
+  /Data?recurso=OA31:
     get:
       tags:
         - OA31 - Chequeras
@@ -28205,7 +28205,7 @@ paths:
         "200":
           description: "0123456789"
 
-  /OA38:
+  /Data?recurso=OA38:
     get:
       tags:
         - OA38 - Formación de Precios
@@ -28407,7 +28407,7 @@ paths:
         "200":
           description: "0123456789"
 
-  /OA41:
+  /Data?recurso=OA41:
     get:
       tags:
         - OA41 - Comisión Sobre Ventas
@@ -28667,7 +28667,7 @@ paths:
         "200":
           description: "0123456789"
 
-  /OA43:
+  /Data?recurso=OA43:
     get:
       tags:
         - OA43 - Tipos de Actividades
@@ -28843,7 +28843,7 @@ paths:
         "200":
           description: "0123456789"
 
-  /OA45:
+  /Data?recurso=OA45:
     get:
       tags:
         - OA45 - Tipos de Negociaciones
@@ -29301,7 +29301,7 @@ paths:
         "200":
           description: "0123456789"
 
-  /OA51:
+  /Data?recurso=OA51:
     get:
       tags:
         - OA51 - Modelos de vehículos
@@ -29477,7 +29477,7 @@ paths:
         "200":
           description: "0123456789"
 
-  /OA57:
+  /Data?recurso=OA57:
     get:
       tags:
         - OA57 - Condiciones de Pago
@@ -29673,7 +29673,7 @@ paths:
         "200":
           description: "0123456789"
 
-  /OA61:
+  /Data?recurso=OA61:
     get:
       tags:
         - OA61 - Motivos Cancelación
@@ -29839,7 +29839,7 @@ paths:
         "200":
           description: "0123456789"
 
-  /OA62:
+  /Data?recurso=OA62:
     get:
       tags:
         - OA62 - Motivos de operaciones
@@ -30009,7 +30009,7 @@ paths:
         "200":
           description: "0123456789"
 
-  /OA71:
+  /Data?recurso=OA71:
     get:
       tags:
         - OA71 - Campañas de marketing
@@ -30462,7 +30462,7 @@ paths:
         "200":
           description: "0123456789"
 
-  /OA80:
+  /Data?recurso=OA80:
     get:
       tags:
         - OA80 - Tipos de Identificaciones
@@ -30636,7 +30636,7 @@ paths:
         "200":
           description: "0123456789"
 
-  /OA81:
+  /Data?recurso=OA81:
     get:
       tags:
         - OA81 - Tipos de Contactos
@@ -30810,7 +30810,7 @@ paths:
         "200":
           description: "0123456789"
 
-  /OA82:
+  /Data?recurso=OA82:
     get:
       tags:
         - OA82 - Nacionalidades
@@ -30982,7 +30982,7 @@ paths:
         "200":
           description: "0123456789"
 
-  /OA83:
+  /Data?recurso=OA83:
     get:
       tags:
         - OA83 - Países
@@ -31224,7 +31224,7 @@ paths:
         "200":
           description: "0123456789"
 
-  /OA84:
+  /Data?recurso=OA84:
     get:
       tags:
         - OA84 - Departamentos
@@ -31481,7 +31481,7 @@ paths:
         "200":
           description: "0123456789"
 
-  /OA85:
+  /Data?recurso=OA85:
     get:
       tags:
         - OA85 - Localidades
@@ -31677,7 +31677,7 @@ paths:
         "200":
           description: "0123456789"
 
-  /OA86:
+  /Data?recurso=OA86:
     get:
       tags:
         - OA86 - Fases de Cultivo
@@ -31845,7 +31845,7 @@ paths:
         "200":
           description: "0123456789"
 
-  /OA91:
+  /Data?recurso=OA91:
     get:
       tags:
         - OA91 - Localización de Stock
@@ -32021,7 +32021,7 @@ paths:
         "200":
           description: "0123456789"
 
-  /OB10:
+  /Data?recurso=OB10:
     get:
       tags:
         - OB10 - Nombres Comerciales
@@ -32201,7 +32201,7 @@ paths:
         "200":
           description: "0123456789"
 
-  /OB16:
+  /Data?recurso=OB16:
     get:
       tags:
         - OB16 - Presentación
@@ -32377,7 +32377,7 @@ paths:
         "200":
           description: "0123456789"
 
-  /OB32:
+  /Data?recurso=OB32:
     get:
       tags:
         - OB32 - Grupos de Productos
@@ -32686,7 +32686,7 @@ paths:
         "200":
           description: "0123456789"
 
-  /OB33:
+  /Data?recurso=OB33:
     get:
       tags:
         - OB33 - Grupos de Productos
@@ -32936,7 +32936,7 @@ paths:
         "200":
           description: "0123456789"
 
-  /OB35:
+  /Data?recurso=OB35:
     get:
       tags:
         - OB35 - Unidades de Medidas
@@ -33118,7 +33118,7 @@ paths:
         "200":
           description: "0123456789"
 
-  /OB61:
+  /Data?recurso=OB61:
     get:
       tags:
         - OB61 - Línea
@@ -33294,7 +33294,7 @@ paths:
         "200":
           description: "0123456789"
 
-  /OB65:
+  /Data?recurso=OB65:
     get:
       tags:
         - OB65 - Restricciones de Líneas por Usuario
@@ -33528,7 +33528,7 @@ paths:
         "200":
           description: "0123456789"
 
-  /OB88:
+  /Data?recurso=OB88:
     get:
       tags:
         - OB88 - Marca
@@ -33696,7 +33696,7 @@ paths:
         "200":
           description: "0123456789"
 
-  /OB89:
+  /Data?recurso=OB89:
     get:
       tags:
         - OB89 - Principios Activos
@@ -33864,7 +33864,7 @@ paths:
         "200":
           description: "0123456789"
 
-  /OC23:
+  /Data?recurso=OC23:
     get:
       tags:
         - OC23 - Calidad de Granos
@@ -34030,7 +34030,7 @@ paths:
         "200":
           description: "0123456789"
 
-  /OC24:
+  /Data?recurso=OC24:
     get:
       tags:
         - OC24 - Tablas de Descuentos
@@ -34366,7 +34366,7 @@ paths:
         "200":
           description: "0123456789"
 
-  /OC25:
+  /Data?recurso=OC25:
     get:
       tags:
         - OC25 - Tipos de Contratos de Granos
@@ -34543,7 +34543,7 @@ paths:
         "200":
           description: "0123456789"
 
-  /OC26:
+  /Data?recurso=OC26:
     get:
       tags:
         - OC26 - Bases de Bushel
@@ -34713,7 +34713,7 @@ paths:
         "200":
           description: "0123456789"
 
-  /OC27:
+  /Data?recurso=OC27:
     get:
       tags:
         - OC27 - Secuencial de Contratos
@@ -34907,7 +34907,7 @@ paths:
         "200":
           description: "0123456789"
 
-  /OC51:
+  /Data?recurso=OC51:
     get:
       tags:
         - OC51 - Modalidades de Contratos
@@ -35075,7 +35075,7 @@ paths:
         "200":
           description: "0123456789"
 
-  /OE01:
+  /Data?recurso=OE01:
     get:
       tags:
         - OE01 - Vendedores
@@ -35578,7 +35578,7 @@ paths:
         "200":
           description: "0123456789"
 
-  /OE51:
+  /Data?recurso=OE51:
     get:
       tags:
         - OE51 - Macro Regiones
@@ -35746,7 +35746,7 @@ paths:
         "200":
           description: "0123456789"
 
-  /OE71:
+  /Data?recurso=OE71:
     get:
       tags:
         - OE71 - Carteras
@@ -36008,7 +36008,7 @@ paths:
         "200":
           description: "0123456789"
 
-  /OF01:
+  /Data?recurso=OF01:
     get:
       tags:
         - OF01 - Garantías
@@ -36180,7 +36180,7 @@ paths:
         "200":
           description: "0123456789"
 
-  /OG31:
+  /Data?recurso=OG31:
     get:
       tags:
         - OG31 - Plagas
@@ -36348,7 +36348,7 @@ paths:
         "200":
           description: "0123456789"
 
-  /OG41:
+  /Data?recurso=OG41:
     get:
       tags:
         - OG41 - Estados Fenológicos
@@ -36514,7 +36514,7 @@ paths:
         "200":
           description: "0123456789"
 
-  /OG71:
+  /Data?recurso=OG71:
     get:
       tags:
         - OG71 - Estaciones pluviométricas
@@ -36740,7 +36740,7 @@ paths:
         "200":
           description: "0123456789"
 
-  /OK11:
+  /Data?recurso=OK11:
     get:
       tags:
         - OK11 - Unidades
@@ -36964,7 +36964,7 @@ paths:
         "200":
           description: "0123456789"
 
-  /OK51:
+  /Data?recurso=OK51:
     get:
       tags:
         - OK51 - Monedas
@@ -37162,7 +37162,7 @@ paths:
         "200":
           description: "0123456789"
 
-  /OK61:
+  /Data?recurso=OK61:
     get:
       tags:
         - OK61 - Tipos de Cotización
@@ -37348,7 +37348,7 @@ paths:
         "200":
           description: "0123456789"
 
-  /OP30:
+  /Data?recurso=OP30:
     get:
       tags:
         - OP30 - Integraciones SSO
@@ -37530,7 +37530,7 @@ paths:
         "200":
           description: "0123456789"
 
-  /OP50:
+  /Data?recurso=OP50:
     get:
       tags:
         - OP50 - Webhooks
@@ -37905,7 +37905,7 @@ paths:
         "200":
           description: "0123456789"
 
-  /OR11:
+  /Data?recurso=OR11:
     get:
       tags:
         - OR11 - Eventos de Hoja de Pago
@@ -38144,7 +38144,7 @@ paths:
         "200":
           description: "0123456789"
 
-  /OR31:
+  /Data?recurso=OR31:
     get:
       tags:
         - OR31 - Operaciones de Hoja de Pago
@@ -38405,7 +38405,7 @@ paths:
         "200":
           description: "0123456789"
 
-  /OR41:
+  /Data?recurso=OR41:
     get:
       tags:
         - OR41 - Cargos
@@ -38577,7 +38577,7 @@ paths:
         "200":
           description: "0123456789"
 
-  /OR51:
+  /Data?recurso=OR51:
     get:
       tags:
         - OR51 - Profesiones
@@ -38749,7 +38749,7 @@ paths:
         "200":
           description: "0123456789"
 
-  /OR61:
+  /Data?recurso=OR61:
     get:
       tags:
         - OR61 - Escalas de Horarios
@@ -38993,7 +38993,7 @@ paths:
         "200":
           description: "0123456789"
 
-  /OR65:
+  /Data?recurso=OR65:
     get:
       tags:
         - OR65 - Feriados
@@ -39227,7 +39227,7 @@ paths:
         "200":
           description: "0123456789"
 
-  /OR71:
+  /Data?recurso=OR71:
     get:
       tags:
         - OR71 - Parentesco
@@ -39393,7 +39393,7 @@ paths:
         "200":
           description: "0123456789"
 
-  /OS41:
+  /Data?recurso=OS41:
     get:
       tags:
         - OS41 - Campos Personalizados
@@ -39625,7 +39625,7 @@ paths:
         "200":
           description: "0123456789"
 
-  /OS51:
+  /Data?recurso=OS51:
     get:
       tags:
         - OS51 - Estructuras de exportación de datos
@@ -39857,7 +39857,7 @@ paths:
         "200":
           description: "0123456789"
 
-  /OS91:
+  /Data?recurso=OS91:
     get:
       tags:
         - OS91 - Planes
@@ -40215,7 +40215,7 @@ paths:
         "200":
           description: "0123456789"
 
-  /OS93:
+  /Data?recurso=OS93:
     get:
       tags:
         - OS93 - Suscripciones
@@ -40511,7 +40511,7 @@ paths:
         "200":
           description: "0123456789"
 
-  /OW01:
+  /Data?recurso=OW01:
     get:
       tags:
         - OW01 - Recursos de Workflow
@@ -40772,7 +40772,7 @@ paths:
         "200":
           description: "0123456789"
 
-  /OW02:
+  /Data?recurso=OW02:
     get:
       tags:
         - OW02 - Personalización de Workflow
@@ -41079,7 +41079,7 @@ paths:
         "200":
           description: "0123456789"
 
-  /OW03:
+  /Data?recurso=OW03:
     get:
       tags:
         - OW03 - Comité
@@ -41317,7 +41317,7 @@ paths:
         "200":
           description: "0123456789"
 
-  /OX02:
+  /Data?recurso=OX02:
     get:
       tags:
         - OX02 - Unidades
@@ -41660,7 +41660,7 @@ paths:
         "200":
           description: "0123456789"
 
-  /OX03:
+  /Data?recurso=OX03:
     get:
       tags:
         - OX03 - Cuentas
@@ -42003,7 +42003,7 @@ paths:
         "200":
           description: "0123456789"
 
-  /OX04:
+  /Data?recurso=OX04:
     get:
       tags:
         - OX04 - Centros de Costo
@@ -42175,7 +42175,7 @@ paths:
         "200":
           description: "0123456789"
 
-  /OX05:
+  /Data?recurso=OX05:
     get:
       tags:
         - OX05 - Actividades de Negocio
@@ -42401,7 +42401,7 @@ paths:
         "200":
           description: "0123456789"
 
-  /OX08:
+  /Data?recurso=OX08:
     get:
       tags:
         - OX08 - Proyectos
@@ -42569,7 +42569,7 @@ paths:
         "200":
           description: "0123456789"
 
-  /OX10:
+  /Data?recurso=OX10:
     get:
       tags:
         - OX10 - Actividades económicas
@@ -42743,7 +42743,7 @@ paths:
         "200":
           description: "0123456789"
 
-  /OX11:
+  /Data?recurso=OX11:
     get:
       tags:
         - OX11 - Puntos de Expedición
@@ -42909,7 +42909,7 @@ paths:
         "200":
           description: "0123456789"
 
-  /OX12:
+  /Data?recurso=OX12:
     get:
       tags:
         - OX12 - Timbrados y Expedidores
@@ -43230,7 +43230,7 @@ paths:
         "200":
           description: "0123456789"
 
-  /OX21:
+  /Data?recurso=OX21:
     get:
       tags:
         - OX21 - Devengamientos
@@ -43418,7 +43418,7 @@ paths:
         "200":
           description: "0123456789"
 
-  /OX51:
+  /Data?recurso=OX51:
     get:
       tags:
         - OX51 - Monedas
@@ -43616,7 +43616,7 @@ paths:
         "200":
           description: "0123456789"
 
-  /OX52:
+  /Data?recurso=OX52:
     get:
       tags:
         - OX52 - Tipos de Cotización
@@ -43802,7 +43802,7 @@ paths:
         "200":
           description: "0123456789"
 
-  /OX54:
+  /Data?recurso=OX54:
     get:
       tags:
         - OX54 - Tipos de Tributación
@@ -44133,7 +44133,7 @@ paths:
         "200":
           description: "0123456789"
 
-  /OX55:
+  /Data?recurso=OX55:
     get:
       tags:
         - OX55 - Tipos de Documentos
@@ -44719,7 +44719,7 @@ paths:
         "200":
           description: "0123456789"
 
-  /OX56:
+  /Data?recurso=OX56:
     get:
       tags:
         - OX56 - Operaciones
@@ -45358,7 +45358,7 @@ paths:
         "200":
           description: "0123456789"
 
-  /OX57:
+  /Data?recurso=OX57:
     get:
       tags:
         - OX57 - Libros de Compra y Venta
@@ -45579,7 +45579,7 @@ paths:
         "200":
           description: "0123456789"
 
-  /OX61:
+  /Data?recurso=OX61:
     get:
       tags:
         - OX61 - Modelos de Negocio
@@ -46562,7 +46562,7 @@ paths:
         "200":
           description: "0123456789"
 
-  /OX63:
+  /Data?recurso=OX63:
     get:
       tags:
         - OX63 - Parámetros Migración de Modelo
@@ -46903,7 +46903,7 @@ paths:
         "200":
           description: "0123456789"
 
-  /OX66:
+  /Data?recurso=OX66:
     get:
       tags:
         - OX66 - Estados Contables
@@ -47151,7 +47151,7 @@ paths:
         "200":
           description: "0123456789"
 
-  /OX71:
+  /Data?recurso=OX71:
     get:
       tags:
         - OX71 - Clasificación de Bienes
@@ -47446,7 +47446,7 @@ paths:
         "200":
           description: "0123456789"
 
-  /OX81:
+  /Data?recurso=OX81:
     get:
       tags:
         - OX81 - Bancos
@@ -47612,7 +47612,7 @@ paths:
         "200":
           description: "0123456789"
 
-  /OZ21:
+  /Data?recurso=OZ21:
     get:
       tags:
         - OZ21 - Perfiles de Acceso
@@ -47930,7 +47930,7 @@ paths:
         "200":
           description: "0123456789"
 
-  /OZ31:
+  /Data?recurso=OZ31:
     get:
       tags:
         - OZ31 - Permisos
@@ -48112,7 +48112,7 @@ paths:
         "200":
           description: "0123456789"
 
-  /OZ61:
+  /Data?recurso=OZ61:
     get:
       tags:
         - OZ61 - Recursos
@@ -48405,7 +48405,7 @@ paths:
         "200":
           description: "0123456789"
 
-  /CC51:
+  /Data?recurso=CC51:
     get:
       tags:
         - CC51 - Diario
@@ -48531,7 +48531,7 @@ paths:
                         Actividad_negocio: "ABCD" # Actividad de Negocio
                         Act_negocio_id: 123
                         Cierre_sn: "ABCD" # Ejercicio cerrado
-  /CF11:
+  /Data?recurso=CF11:
     get:
       tags:
         - CF11 - Movimiento de Cuentas de Disponibilidades
@@ -48662,7 +48662,7 @@ paths:
                         Factura_id: 123
                         Nombre_unidad: "ABCD" # Unidad
                         Cierre_sn: "ABCD" # Ejercicio cerrado
-  /CF51:
+  /Data?recurso=CF51:
     get:
       tags:
         - CF51 - Movimiento Financiero de Entidades
@@ -48819,7 +48819,7 @@ paths:
                         Parent_ID: 123
                         Caja_tipo: "ABCD"
                         Cierre_sn: "ABCD" # Ejercicio cerrado
-  /CF61:
+  /Data?recurso=CF61:
     get:
       tags:
         - CF61 - Recibos
@@ -48943,7 +48943,7 @@ paths:
                         Cotizacionro: 123.45 # Cotización
                         id: 123
                         Cierre_sn: "ABCD" # Ejercicio cerrado
-  /CG11:
+  /Data?recurso=CG11:
     get:
       tags:
         - CG11 - Posición de Contratos
@@ -49097,7 +49097,7 @@ paths:
                         Cierre_sn: "ABCD" # Ejercicio cerrado
                         Obs_contrato_costo: "ABCD" # Obs de fijación de costo
                         id: 123
-  /CM51:
+  /Data?recurso=CM51:
     get:
       tags:
         - CM51 - Planificación de Objetivos por cliente
@@ -49248,7 +49248,7 @@ paths:
                         id: 123
                         Nombre_comercial_id: 123
                         Producto_id: 123
-  /CM52:
+  /Data?recurso=CM52:
     get:
       tags:
         - CM52 - Planificación de Objetivos por Vendedor
@@ -49379,7 +49379,7 @@ paths:
                         id: 123
                         Nombre_comercial_id: 123
                         Producto_id: 123
-  /CM61:
+  /Data?recurso=CM61:
     get:
       tags:
         - CM61 - Productos Vendidos
@@ -49553,7 +49553,7 @@ paths:
                         Nombre_comercial_id: 123
                         Nombre_comercial: "ABCD" # Nombre comercial
                         Iva_total: 123.45 # Total Iva
-  /CM71:
+  /Data?recurso=CM71:
     get:
       tags:
         - CM71 - Campañas de marketing
@@ -49671,7 +49671,7 @@ paths:
                         Operacion_id: 123
                         Pedido_tipo_id: 123
                         Cierre_sn: "ABCD" # Ejercicio cerrado
-  /CR51:
+  /Data?recurso=CR51:
     get:
       tags:
         - CR51 - Actividades
@@ -49785,7 +49785,7 @@ paths:
                         Apunte_status: "ABCD" # Status
                         Vendedor_id: 123
                         Usuario_ro_id: 123
-  /CS31:
+  /Data?recurso=CS31:
     get:
       tags:
         - CS31 - Saldos Físicos
@@ -49895,7 +49895,7 @@ paths:
                         Marca_id: 123
                         id: 123
                         Nombre_unidad: "ABCD" # Unidad
-  /CS51:
+  /Data?recurso=CS51:
     get:
       tags:
         - CS51 - Lista de Precios
@@ -50005,7 +50005,7 @@ paths:
                         Marca: "ABCD"
                         Normal: 123.45 # Precio Normal
                         Minima: 123.45 # Precio Minimo
-  /CS81:
+  /Data?recurso=CS81:
     get:
       tags:
         - CS81 - Movimiento de Stock Físico
@@ -50147,7 +50147,7 @@ paths:
                         Marca_id: 123
                         Marca: "ABCD"
                         Cierre_sn: "ABCD" # Ejercicio cerrado
-  /CS85:
+  /Data?recurso=CS85:
     get:
       tags:
         - CS85 - Movimiento de Stock Contable
@@ -50314,7 +50314,7 @@ paths:
                         Marca: "ABCD"
                         Lote_id: 123
                         Cierre_sn: "ABCD" # Ejercicio cerrado
-  /FB70:
+  /Data?recurso=FB70:
     get:
       tags:
         - FB70 - Aranduka
@@ -50606,7 +50606,7 @@ paths:
         "200":
           description: "0123456789"
 
-  /FB80:
+  /Data?recurso=FB80:
     get:
       tags:
         - FB80 - Documentos electrónicos
@@ -50822,7 +50822,7 @@ paths:
         "200":
           description: "0123456789"
 
-  /FM31:
+  /Data?recurso=FM31:
     get:
       tags:
         - FM31 - Status de romaneos
@@ -51020,7 +51020,7 @@ paths:
         "200":
           description: "0123456789"
 
-  /RP21:
+  /Data?recurso=RP21:
     get:
       tags:
         - RP21 - Insumos Agrícolas
@@ -51495,7 +51495,7 @@ paths:
         "200":
           description: "0123456789"
 
-  /RP71:
+  /Data?recurso=RP71:
     get:
       tags:
         - RP71 - Lista de Precios
@@ -51697,7 +51697,7 @@ paths:
         "200":
           description: "0123456789"
 
-  /RP81:
+  /Data?recurso=RP81:
     get:
       tags:
         - RP81 - Estados Fenológicos
@@ -51863,7 +51863,7 @@ paths:
         "200":
           description: "0123456789"
 
-  /RC31:
+  /Data?recurso=RC31:
     get:
       tags:
         - RC31 - Clientes
@@ -52366,7 +52366,7 @@ paths:
         "200":
           description: "0123456789"
 
-  /RC41:
+  /Data?recurso=RC41:
     get:
       tags:
         - RC41 - Inmuebles
@@ -52632,7 +52632,7 @@ paths:
         "200":
           description: "0123456789"
 
-  /RC51:
+  /Data?recurso=RC51:
     get:
       tags:
         - RC51 - Otros Bienes
@@ -52876,7 +52876,7 @@ paths:
         "200":
           description: "0123456789"
 
-  /RC55:
+  /Data?recurso=RC55:
     get:
       tags:
         - RC55 - Actividades
@@ -53176,7 +53176,7 @@ paths:
         "200":
           description: "0123456789"
 
-  /RC61:
+  /Data?recurso=RC61:
     get:
       tags:
         - RC61 - Mediciones de Áreas
@@ -53368,7 +53368,7 @@ paths:
         "200":
           description: "0123456789"
 
-  /RC71:
+  /Data?recurso=RC71:
     get:
       tags:
         - RC71 - Historial de Checkin
@@ -53568,7 +53568,7 @@ paths:
         "200":
           description: "0123456789"
 
-  /RC81:
+  /Data?recurso=RC81:
     get:
       tags:
         - RC81 - Restricciones de Entidades por Usuario
@@ -53802,7 +53802,7 @@ paths:
         "200":
           description: "0123456789"
 
-  /RV31:
+  /Data?recurso=RV31:
     get:
       tags:
         - RV31 - Planificación Comercial
@@ -54255,7 +54255,7 @@ paths:
         "200":
           description: "0123456789"
 
-  /RV51:
+  /Data?recurso=RV51:
     get:
       tags:
         - RV51 - Cotizaciones de Monedas
@@ -54437,7 +54437,7 @@ paths:
         "200":
           description: "0123456789"
 
-  /RV61:
+  /Data?recurso=RV61:
     get:
       tags:
         - RV61 - Pedidos
@@ -54864,7 +54864,7 @@ paths:
         "200":
           description: "0123456789"
 
-  /RV62:
+  /Data?recurso=RV62:
     get:
       tags:
         - RV62 - Cancelación de Pedidos
@@ -55109,7 +55109,7 @@ paths:
         "200":
           description: "0123456789"
 
-  /RV71:
+  /Data?recurso=RV71:
     get:
       tags:
         - RV71 - Campañas de marketing
@@ -55562,7 +55562,7 @@ paths:
         "200":
           description: "0123456789"
 
-  /RV81:
+  /Data?recurso=RV81:
     get:
       tags:
         - RV81 - Canje de premios y cashback
