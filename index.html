@@ -3,9 +3,16 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>Versat Docs</title>
+  <title>API Documentation</title>
 
   <link rel="stylesheet" href="https://unpkg.com/swagger-ui-dist/swagger-ui.css">
+
+  <!-- ocultar link openapi.yaml -->
+  <style>
+    .swagger-ui .info .url {
+      display: none !important;
+    }
+  </style>
 </head>
 
 <body>
@@ -16,20 +23,8 @@
 
   <script>
     SwaggerUIBundle({
-      dom_id: "#swagger-ui",
-
-      urls: [
-        {
-          url: "openapi-api.yaml",
-          name: "API Core"
-        },
-        {
-          url: "openapi-webhooks.yaml",
-          name: "Webhooks"
-        }
-      ],
-
-      layout: "BaseLayout"
+      url: "openapi.yaml",
+      dom_id: "#swagger-ui"
     });
   </script>
 
