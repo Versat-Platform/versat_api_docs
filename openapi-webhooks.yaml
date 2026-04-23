@@ -1,0 +1,88 @@
+openapi: 3.0.3
+
+info:
+  title: Versat Webhooks - Integrations
+  version: 2026.04.21
+  description: |
+    # 📡 Webhooks Center
+
+    Este módulo documenta el sistema de Webhooks de Versat.
+
+    Los Webhooks permiten enviar eventos automáticamente a sistemas externos cuando ocurre una acción dentro del sistema.
+
+    ---
+
+    ## 🧠 ¿Qué es un Webhook?
+
+    Un Webhook es una notificación HTTP automática que se envía cuando ocurre un evento en el sistema.
+
+    Estos eventos permiten integraciones en tiempo real sin intervención manual.
+
+    Ejemplos:
+    - Creación de factura
+    - Actualización de cotización
+    - Eliminación de registros
+
+    ---
+
+    ## 🔄 Flujo de ejecución
+
+    1. Ocurre un evento en el sistema Versat
+    2. Se evalúan las condiciones configuradas
+    3. Se construye el payload con datos del recurso
+    4. Se envía una petición HTTP al endpoint configurado
+    5. Se registra la respuesta del sistema externo
+    6. Se ejecutan notificaciones si ocurre un error
+
+    ---
+
+    ## ⚙️ Configuración del Webhook
+
+    - **Descripción:** Identificador del webhook
+    - **Recurso:** Entidad que dispara el evento (ej: AI71 - Facturas)
+    - **Actividad:** Acción que activa el webhook
+    - **Endpoint URL:** URL destino del sistema externo
+    - **HTTP Method:** GET / POST / PUT / DELETE
+    - **Envío de datos:** Body o URL Parameters
+    - **Validación:** Total / Parcial
+    - **Notificaciones:** Correos de alerta
+
+    ---
+
+    ## 🔐 Autenticación (opcional)
+
+    - Auth Endpoint URL
+    - Auth Method (GET / POST)
+    - Auth Body
+    - Auth Token Name
+
+    ---
+
+    ## 📦 Ejemplo de evento
+
+    ```json
+    {
+      "event": "cotizacion.creada",
+      "source": "Versat",
+      "version": "1.0",
+      "timestamp": "2026-04-21T10:30:00Z",
+      "data": {
+        "id": 123,
+        "fecha": "2026-04-21",
+        "total": 150.75,
+        "moneda": "USD"
+      }
+    }
+    ```
+
+    ---
+
+    ## ⚠️ Importante
+
+    - No requiere consumo manual
+    - Se ejecuta automáticamente por eventos del sistema
+    - No es un endpoint REST tradicional
+
+tags: []
+
+paths: {}
