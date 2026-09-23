@@ -42,33 +42,17 @@
   <script>
 
     SwaggerUIBundle({
-
       url: "openapi.yaml",
-
       dom_id: "#swagger-ui",
 
-      /*
-       * Muestra todos los tags y todas
-       * las operaciones inicialmente.
-       */
-      docExpansion: "full",
-
-      /*
-       * Permite buscar/filtrar por tags
-       * desde Swagger.
-       */
       filter: true,
 
-      /*
-       * Permite navegar directamente
-       * a una operación mediante el hash.
-       */
-      deepLinking: true,
+      docExpansion: "list",
 
-      defaultModelsExpandDepth: 1,
+      defaultModelsExpandDepth: -1,
+      defaultModelExpandDepth: -1,
 
-      defaultModelExpandDepth: 1
-
+      deepLinking: true
     });
 
   </script>
