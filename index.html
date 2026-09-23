@@ -23,17 +23,15 @@
 
   <script>
     SwaggerUIBundle({
-      url: "/swagger/v1/swagger.json",
+      url: "openapi.yaml",
       dom_id: "#swagger-ui",
 
       filter: true,
 
-      presets: [
-        SwaggerUIBundle.presets.apis,
-        SwaggerUIStandalonePreset
-      ],
+      docExpansion: "list",
 
-      layout: "StandaloneLayout"
+      defaultModelsExpandDepth: 1,
+      defaultModelExpandDepth: 1
     });
   </script>
 
