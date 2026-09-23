@@ -3,16 +3,34 @@
 
 <head>
   <meta charset="UTF-8">
+
   <title>Versat Integration Platform</title>
 
   <link rel="stylesheet" href="https://unpkg.com/swagger-ui-dist/swagger-ui.css">
 
-  <!-- ocultar link openapi.yaml -->
   <style>
+    /* Ocultar link openapi.yaml */
     .swagger-ui .info .url {
       display: none !important;
     }
+
+    /*
+     * IMPORTANTE:
+     * Evita que el navegador trate partes de Swagger
+     * como contenido que puede omitirse por estar
+     * fuera de pantalla.
+     */
+    #swagger-ui,
+    #swagger-ui .swagger-ui,
+    #swagger-ui .opblock-tag-section,
+    #swagger-ui .opblock,
+    #swagger-ui .opblock-summary,
+    #swagger-ui .opblock-description-wrapper {
+      content-visibility: visible !important;
+      contain: none !important;
+    }
   </style>
+
 </head>
 
 <body>
@@ -22,17 +40,37 @@
   <script src="https://unpkg.com/swagger-ui-dist/swagger-ui-bundle.js"></script>
 
   <script>
+
     SwaggerUIBundle({
+
       url: "openapi.yaml",
+
       dom_id: "#swagger-ui",
 
+      /*
+       * Muestra todos los tags y todas
+       * las operaciones inicialmente.
+       */
+      docExpansion: "full",
+
+      /*
+       * Permite buscar/filtrar por tags
+       * desde Swagger.
+       */
       filter: true,
 
-      docExpansion: "list",
+      /*
+       * Permite navegar directamente
+       * a una operación mediante el hash.
+       */
+      deepLinking: true,
 
       defaultModelsExpandDepth: 1,
+
       defaultModelExpandDepth: 1
+
     });
+
   </script>
 
 </body>
