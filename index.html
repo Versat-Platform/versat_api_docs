@@ -1,325 +1,40 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
   <title>Versat Integration Platform</title>
 
   <link rel="stylesheet" href="https://unpkg.com/swagger-ui-dist/swagger-ui.css">
 
+  <!-- ocultar link openapi.yaml -->
   <style>
-    /* Ocultar el link openapi.yaml */
     .swagger-ui .info .url {
       display: none !important;
-    }
-
-    /* Buscador global */
-    #global-search-container {
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      background: white;
-      padding: 12px 20px;
-      border-bottom: 1px solid #ddd;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
-    }
-
-    #global-search {
-      width: 100%;
-      max-width: 700px;
-      box-sizing: border-box;
-      padding: 10px 14px;
-      font-size: 15px;
-      border: 1px solid #aaa;
-      border-radius: 4px;
-      outline: none;
-    }
-
-    #global-search:focus {
-      border-color: #4990e2;
-    }
-
-    #global-search-results {
-      max-width: 700px;
-      margin-top: 8px;
-      font-size: 13px;
-    }
-
-    .search-result {
-      padding: 8px 10px;
-      border-bottom: 1px solid #eee;
-      cursor: pointer;
-    }
-
-    .search-result:hover {
-      background: #f5f5f5;
-    }
-
-    .search-result-title {
-      font-weight: bold;
-    }
-
-    .search-result-context {
-      color: #666;
-      margin-top: 3px;
-    }
-
-    .search-no-results {
-      padding: 8px 10px;
-      color: #777;
     }
   </style>
 </head>
 
 <body>
 
-  <!-- Buscador global -->
-  <div id="global-search-container">
-
-    <input type="search" id="global-search" placeholder="Buscar en toda la documentación..." autocomplete="off">
-
-    <div id="global-search-results"></div>
-
-  </div>
-
-  <!-- Swagger -->
   <div id="swagger-ui"></div>
 
   <script src="https://unpkg.com/swagger-ui-dist/swagger-ui-bundle.js"></script>
 
   <script>
-
-    let openApiDocument = null;
-
-    /*
-     * Cargar el OpenAPI directamente.
-     *
-     * Se utiliza fetch en lugar de depender únicamente
-     * de Swagger UI para poder buscar en TODO el documento,
-     * incluso en endpoints que todavía no están expandidos.
-     */
-    fetch("openapi.yaml")
-      .then(response => {
-        if (!response.ok) {
-          throw new Error(
-            "No se pudo cargar openapi.yaml: " + response.status
-          );
-        }
-
-        return response.text();
-      })
-      .then(text => {
-
-        /*
-         * Guardamos el YAML como texto.
-         *
-         * Esto permite buscar también en:
-         * - paths
-         * - parameters
-         * - descriptions
-         * - tags
-         * - schemas
-         * - propiedades
-         * - ejemplos
-         * - etc.
-         */
-        openApiDocument = text;
-
-      })
-      .catch(error => {
-
-        console.error(error);
-
-        document.getElementById("global-search-results").innerHTML =
-          '<div class="search-no-results">' +
-          'No se pudo cargar la documentación para realizar la búsqueda.' +
-          '</div>';
-
-      });
-
-
-    /*
-     * Inicializar Swagger UI
-     */
     SwaggerUIBundle({
-
-      url: "openapi.yaml",
-
+      url: "/swagger/v1/swagger.json",
       dom_id: "#swagger-ui",
 
-      /*
-       * Mostrar el filtro de Swagger.
-       */
       filter: true,
 
-      /*
-       * Los endpoints aparecen contraídos.
-       *
-       * Es mejor para una documentación grande como la tuya.
-       */
-      docExpansion: "list",
+      presets: [
+        SwaggerUIBundle.presets.apis,
+        SwaggerUIStandalonePreset
+      ],
 
-      /*
-       * Mostrar modelos.
-       */
-      defaultModelsExpandDepth: 1,
-
-      defaultModelExpandDepth: 1
-
+      layout: "StandaloneLayout"
     });
-
-
-    /*
-     * Búsqueda global
-     */
-    const searchInput =
-      document.getElementById("global-search");
-
-    const searchResults =
-      document.getElementById("global-search-results");
-
-
-    searchInput.addEventListener("input", function () {
-
-      const search = this.value
-        .trim()
-        .toLowerCase();
-
-      searchResults.innerHTML = "";
-
-      /*
-       * No buscar hasta que haya al menos 2 caracteres.
-       */
-      if (search.length < 2) {
-        return;
-      }
-
-      /*
-       * Todavía no terminó de cargar el YAML.
-       */
-      if (!openApiDocument) {
-
-        searchResults.innerHTML =
-          '<div class="search-no-results">' +
-          'Cargando documentación...' +
-          '</div>';
-
-        return;
-      }
-
-
-      const lines =
-        openApiDocument.split("\n");
-
-      const results = [];
-
-
-      /*
-       * Buscar línea por línea.
-       *
-       * Limitamos a 50 resultados para evitar
-       * que una búsqueda muy genérica haga pesada
-       * la página.
-       */
-      for (let i = 0; i < lines.length; i++) {
-
-        if (
-          lines[i]
-            .toLowerCase()
-            .includes(search)
-        ) {
-
-          results.push({
-            line: i + 1,
-            text: lines[i].trim()
-          });
-
-        }
-
-        if (results.length >= 50) {
-          break;
-        }
-
-      }
-
-
-      /*
-       * No encontramos resultados.
-       */
-      if (results.length === 0) {
-
-        searchResults.innerHTML =
-          '<div class="search-no-results">' +
-          'No se encontraron resultados para <strong>' +
-          escapeHtml(this.value) +
-          '</strong>.' +
-          '</div>';
-
-        return;
-      }
-
-
-      /*
-       * Mostrar resultados.
-       */
-      results.forEach(result => {
-
-        const div =
-          document.createElement("div");
-
-        div.className = "search-result";
-
-        div.innerHTML =
-          '<div class="search-result-title">' +
-          'Línea ' + result.line +
-          '</div>' +
-
-          '<div class="search-result-context">' +
-          escapeHtml(result.text) +
-          '</div>';
-
-        searchResults.appendChild(div);
-
-      });
-
-
-      /*
-       * Mostrar aviso cuando se alcanzó el límite.
-       */
-      if (results.length >= 50) {
-
-        const limit =
-          document.createElement("div");
-
-        limit.className =
-          "search-no-results";
-
-        limit.innerHTML =
-          "Se muestran los primeros 50 resultados.";
-
-        searchResults.appendChild(limit);
-
-      }
-
-    });
-
-
-    /*
-     * Evitar insertar HTML proveniente del YAML.
-     */
-    function escapeHtml(text) {
-
-      const div =
-        document.createElement("div");
-
-      div.textContent = text;
-
-      return div.innerHTML;
-
-    }
-
   </script>
 
 </body>
