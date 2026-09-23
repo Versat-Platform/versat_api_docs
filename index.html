@@ -24,7 +24,14 @@
   <script>
     SwaggerUIBundle({
       url: "openapi.yaml",
-      dom_id: "#swagger-ui"
+      dom_id: "#swagger-ui",
+
+      filter: true,
+
+      docExpansion: "list",
+
+      defaultModelsExpandDepth: 1,
+      defaultModelExpandDepth: 1
     });
   </script>
 
