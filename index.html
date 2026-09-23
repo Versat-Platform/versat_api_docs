@@ -15,7 +15,6 @@
     }
 
     /*
-     * IMPORTANTE:
      * Evita que el navegador trate partes de Swagger
      * como contenido que puede omitirse por estar
      * fuera de pantalla.
@@ -53,6 +52,25 @@
       defaultModelExpandDepth: -1,
 
       deepLinking: true
+    });
+
+    // Cambiar "Filter by tag" por "Buscar"
+    const observer = new MutationObserver(() => {
+
+      const input = document.querySelector(
+        '.swagger-ui .operation-filter-input'
+      );
+
+      if (input) {
+        input.placeholder = "Buscar";
+        observer.disconnect();
+      }
+
+    });
+
+    observer.observe(document.getElementById("swagger-ui"), {
+      childList: true,
+      subtree: true
     });
 
   </script>
