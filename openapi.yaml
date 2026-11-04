@@ -1,7 +1,7 @@
 openapi: 3.0.3
 info:
   title: Versat Integration Platform
-  version: 2026.10.21
+  version: 2026.11.04
   description: |
 
     Este portal documenta los dos principales mecanismos de integración del sistema Versat:
@@ -78,7 +78,7 @@ info:
     # URL Base
 
     ```
-    https://app.versat.ag/api/Polling/
+    https://api.versat.ag/api/Polling/
     ```
 
     ---
